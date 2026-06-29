@@ -1,7 +1,11 @@
+import Button from "./components/Button";
+
 function App() {
   return (
-    <div className="bg-black text-white h-screen flex justify-center items-center">
-      <h1 className="text-green-500 text-5xl">Portfolio</h1>
+    <div className="min-h-screen bg-[#050816] flex gap-6 justify-center items-center">
+      <Button text="View Projects" variant="primary"></Button>
+      <Button text="Download Resume" variant="secondary"></Button>
+      
     </div>
   );
 }
