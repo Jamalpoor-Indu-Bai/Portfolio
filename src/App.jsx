@@ -1,6 +1,7 @@
 import Badge from "./components/Badge";
 import Button from "./components/Button";
 import Card from "./components/Card";
+import Navbar from "./components/Navbar";
 import SectionTitle from "./components/SectionTitle";
 
 function App() {
@@ -33,6 +34,12 @@ function App() {
       <Badge text="Spring Boot" />
       <Badge text="MongoDB" />
       <Badge text="Framer Motion" />
+    </div>
+
+
+    <div className="min-h-screen bg-[#050816]">
+     <Navbar />
+
     </div>
     </div>
   );
