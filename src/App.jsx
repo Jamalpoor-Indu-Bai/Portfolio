@@ -1,4 +1,5 @@
 import Button from "./components/Button";
+import Card from "./components/Card";
 import SectionTitle from "./components/SectionTitle";
 
 function App() {
@@ -10,6 +11,18 @@ function App() {
     <div className="min-h-screen bg-[#050816] p-10">
       <SectionTitle title="My Portfolio" subtitle="Welcome to my portfolio website!"></SectionTitle>
 
+    </div>
+
+    <div className="min-h-screen bg-[#050816] flex items-center justify-center p-10">
+      <Card className="max-w-md">
+        <h2 className="text-2xl font-bold text-white">
+          Portfolio Website
+        </h2>
+
+        <p className="mt-4 text-gray-400">
+          Built using React, Tailwind CSS, and Framer Motion.
+        </p>
+      </Card>
     </div>
     </div>
   );
