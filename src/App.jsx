@@ -1,3 +1,4 @@
+import Badge from "./components/Badge";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import SectionTitle from "./components/SectionTitle";
@@ -23,6 +24,15 @@ function App() {
           Built using React, Tailwind CSS, and Framer Motion.
         </p>
       </Card>
+    </div>
+
+    <div className="min-h-screen bg-[#050816] flex flex-wrap items-center justify-center gap-4 p-10">
+      <Badge text="React" />
+      <Badge text="Tailwind CSS" />
+      <Badge text="Java" />
+      <Badge text="Spring Boot" />
+      <Badge text="MongoDB" />
+      <Badge text="Framer Motion" />
     </div>
     </div>
   );
