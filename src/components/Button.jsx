@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 
-const Button = ({text,variant="primary",onClick}) => {
+const Button = ({text,variant="primary",onClick,icon}) => {
     const baseStyles=
     "px-6 py-3 rounded-xl font-medium trasition-all duration-300";
 

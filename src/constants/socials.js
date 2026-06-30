@@ -1,4 +1,4 @@
-export const socials=[
+const socials=[
     {
         name:"github",
         url:"https://github.com/Jamalpoor-Indu-Bai"
@@ -12,3 +12,4 @@ export const socials=[
         url:"mailto:indujamalpur16@gmail.com"
     },
 ];
+export default socials;
