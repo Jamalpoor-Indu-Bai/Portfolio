@@ -1,24 +1,9 @@
-import portfolioImg from "../assets/projects/portfolio.png";
+
 import neurofleetImg from "../assets/projects/neurofleet.png";
 import tripnovaImg from "../assets/projects/tripnova.png";
 import skill4shineImg from "../assets/projects/skill4shine.png";
 
 export const projects = [
-  {
-    id: 1,
-    title: "Portfolio",
-    description:
-      "Modern responsive portfolio built using React and Tailwind CSS to showcase my projects, skills, and achievements.",
-    technologies: [
-      "React",
-      "Tailwind CSS",
-      "Framer Motion"
-    ],
-    github: "",
-    live: "",
-    image: portfolioImg,
-    featured: true,
-  },
   {
     id: 2,
     title: "NeuroFleet-X",
