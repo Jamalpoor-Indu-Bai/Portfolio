@@ -1,53 +1,72 @@
-export const projects=[
-    {
-         title: "Portfolio",
-    description: "My personal portfolio website.",
+import portfolioImg from "../assets/projects/portfolio.png";
+import neurofleetImg from "../assets/projects/neurofleet.png";
+import tripnovaImg from "../assets/projects/tripnova.png";
+import skill4shineImg from "../assets/projects/skill4shine.png";
+
+export const projects = [
+  {
+    id: 1,
+    title: "Portfolio",
+    description:
+      "Modern responsive portfolio built using React and Tailwind CSS to showcase my projects, skills, and achievements.",
     technologies: [
       "React",
       "Tailwind CSS",
-      "Framer Motion",
+      "Framer Motion"
     ],
     github: "",
-    liveDemo: "",
-    image: "",
+    live: "",
+    image: portfolioImg,
+    featured: true,
   },
   {
-    title:"NeuroFleet-x",
-    description:"A web application for managing and tracking fleet vehicles using IoT and AI technologies.",
-    technologies:[
-        "React",
-        "Springboot",
-        "MySQL",
-        "ETA prediction",
+    id: 2,
+    title: "NeuroFleet-X",
+    description:
+      "Fleet management platform with AI-powered ETA prediction and real-time vehicle tracking.",
+    technologies: [
+      "React",
+      "Spring Boot",
+      "MySQL",
+      "Google Maps API"
     ],
-    github:"",
-    liveDemo:"",
-    image:"",
+    github: "https://github.com/Jamalpoor-Indu-Bai/NeuroFleetX_Project",
+    live: "https://neurofleet-x.netlify.app/",
+    image: neurofleetImg,
+    featured: true,
   },
   {
-    title:"TripNova-AI Travel Planner",
-    description:"An AI-powered travel planning application that generates personalized itineraries based on user preferences and interests.",
-    technologies:[
-        "React",
-        "Springboot",
-        "MySQL",
-        "AI-powered itinerary generation",
+    id: 3,
+    title: "TripNova",
+    description:
+      "AI-powered travel planner that generates personalized itineraries based on user preferences and budget.",
+    technologies: [
+      "React",
+      "Spring Boot",
+      "MySQL",
+      "OpenAI API"
     ],
-    github:"",
-    liveDemo:"",
-    image:"",
+    github: "https://github.com/Jamalpoor-Indu-Bai/ai-trip-planner",
+    live: "https://trip-nova.netlify.app/",
+    image: tripnovaImg,
+    featured: true,
   },
   {
-    title:"SKILL4SHINE",
-    description:"Skill Development and Interview Preparation Platform",
-    technologies:[
-        "React",
-        "Django",
-        "Flask",
-        "MySQL",
+    id: 4,
+    title: "Skill4Shine",
+    description:
+      "Interview preparation platform with coding practice, aptitude tests, and learning resources.",
+    technologies: [
+      "React",
+      "Django",
+      "Flask",
+      "MySQL"
     ],
-    github:"",
-    liveDemo:"",
-    image:"",
+    github: "https://github.com/Skill4Shine/skill4shine",
+    live: "https://skill4shine.vercel.app/",
+    image: skill4shineImg,
+    featured: true,
   }
-]
+];
+
+export default projects;
