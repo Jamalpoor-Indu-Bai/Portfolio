@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     
-    <>
+    <div className="min-h-screen bg-gray-950 text-white">
      <Navbar />
      <Hero />
      <About />
@@ -18,7 +18,7 @@ function App() {
     <Projects /> 
     <Contact />
     <Footer />
-     </>
+     </div>
 
   );
 };
