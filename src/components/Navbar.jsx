@@ -6,12 +6,12 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[#050816]/80 backdrop-blur-md">
       <Container>
-        <nav className="flex h-20 items-center justify-between px-0">
+        <nav className="flex h-15 items-center justify-between px-0">
           <a
             href="#home"
             className="text-2xl font-bold text-white"
           >
-            Indu<span className="text-emerald-400">.</span>
+            Indu<span className="text-emerald-400">.dev</span>
           </a>
 
           {/* Navigation Links */}
