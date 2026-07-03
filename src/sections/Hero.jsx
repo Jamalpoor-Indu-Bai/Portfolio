@@ -5,6 +5,12 @@ import profileImage from '../assets/profileImage.jpg';
 import socials from '../constants/socials';
 import { FaArrowRight } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
+import { motion } from "framer-motion";
+import {
+  fadeInLeft,
+  fadeInRight,
+  floatingAnimation,
+} from "../animations/variants";
 import {
   FaGithub,
   FaLinkedin,
@@ -18,9 +24,14 @@ const Hero = () => {
         <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
               {/* left side */}
-                <div>
+                <motion.div
+  variants={fadeInLeft}
+  initial="hidden"
+  animate="visible"
+  className="text-center lg:text-left"
+>
                     <p className="text-lg font-medium text-emerald-400">
-  👋 Hello, I'm
+  Hello, I'm
 </p>
 
 <h1 className="mt-4 text-5xl font-bold leading-tight text-white md:text-6xl">
@@ -39,7 +50,15 @@ const Hero = () => {
 </p>
 
 
-<div className="mt-10 flex flex-wrap gap-4">
+<motion.div
+  className="mt-10 flex flex-wrap gap-4"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    delay: 0.1,
+    duration: 0.5,
+  }}
+>
   <Button
     text="View Projects"
     variant="primary"
@@ -58,9 +77,16 @@ const Hero = () => {
     icon={<HiOutlineDownload />}
   />
   </a>
-  </div>
+  </motion.div>
 
-  <div className="mt-10 flex items-center gap-6">
+  <motion.div
+  className="mt-10 flex items-center gap-6"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{
+    delay: 0.1
+  }}
+>
     {socials.map((social)=>(
       <a
       key={social.name}
@@ -75,13 +101,21 @@ const Hero = () => {
       {social.name === "email" && <MdEmail />}
     </a>
   ))}
-</div>
+  </motion.div>
 
-                </div>
+                </motion.div>
 
                 {/* right side */}
-                <div>
-                    <div className="flex justify-center">
+                <motion.div
+  variants={fadeInRight}
+  initial="hidden"
+  animate="visible"
+>
+                    <motion.div
+  className="flex justify-center"
+  animate={floatingAnimation.animate}
+  
+>
   <div className="relative h-80 w-80">
     {/* Glow */}
     <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-3xl"></div>
@@ -93,9 +127,9 @@ const Hero = () => {
       className="relative h-80 w-80 rounded-full object-cover border-4 border-emerald-500 shadow-[0_0_50px_rgba(16,185,129,0.3)] transition-transform duration-500 hover:scale-105"
     />
   </div>
-</div>
+</motion.div>
 
-                </div>
+                </motion.div>
 
             </div>
         </Container>
