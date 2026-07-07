@@ -30,13 +30,13 @@ const Hero = () => {
   animate="visible"
   className="text-center lg:text-left"
 >
-                    <p className="text-lg font-medium text-emerald-400">
+                    <p className="text-lg font-medium text-green-500">
   Hello, I'm
 </p>
 
 <h1 className="mt-4 text-5xl font-bold leading-tight text-white md:text-6xl">
   Indu Bai
-  <span className="block text-emerald-400">
+  <span className="block text-green-400">
     Jamalpur
   </span>
 </h1>
@@ -94,7 +94,7 @@ const Hero = () => {
       target={social.name !== "email" ? "_blank" : undefined}
       rel={social.name !== "email" ? "noopener noreferrer" : undefined}
       aria-label={social.name}
-      className="text-3xl text-gray-400 transition-colors duration-300 hover:text-emerald-400"
+      className="text-3xl text-white transition-colors duration-300 hover:text-green-500"
     >
       {social.name === "github" && <FaGithub />}
       {social.name === "linkedin" && <FaLinkedin />}
