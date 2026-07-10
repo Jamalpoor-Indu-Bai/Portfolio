@@ -8,7 +8,7 @@ export const contact=[
     },
     {
         id: 2,
-        title: "phone number",
+        title: "phone",
         value: "+91 9573600000",
         href: "tel:+919573600000",
     },
