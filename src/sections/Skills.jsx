@@ -1,33 +1,82 @@
-import React from 'react'
+import React from "react";
 import Container from "../components/Container";
 import SectionTitle from "../components/SectionTitle";
 import Card from "../components/Card";
+import Badge from "../components/Badge";
 import { skills } from "../constants/skills";
+import { motion } from "framer-motion";
+
+import {
+  fadeInUp,
+  staggerContainer,
+} from "../animations/variants";
+
 const Skills = () => {
   return (
     <section id="skills" className="py-28">
       <Container>
-        <SectionTitle title="Skills" subtitle="My Technical Skills" />
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {skills.map((skill)=>(
-                <Card key={skill.name} className="group flex flex-col items-center justify-center p-6">
-                    <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5">
-  <img
-    src={skill.icon}
-    alt={skill.name}
-    className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
+
+       <motion.div
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+>
+  <SectionTitle
+    title="Skills"
+    subtitle="Technologies I Work With"
   />
+</motion.div>
+
+        <motion.div
+  className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+  variants={staggerContainer}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+
+          {skills.map((skill) => (
+  <motion.div
+    key={skill.category}
+    variants={fadeInUp}
+    className="h-full"
+  >
+    <Card className="h-full flex flex-col">
+              <h3 className="text-2xl font-bold text-green-500 0 mb-6">
+                {skill.category}
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+  {skill.technologies.map((tech) => {
+    const Icon = tech.icon;
+
+    return (
+      <motion.div
+        key={tech.name}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <Badge>
+  <i className={`${tech.icon} text-xl`}></i>
+  <span>{tech.name}</span>
+</Badge>
+      </motion.div>
+    );
+  })}
 </div>
-                    <h4 className="text-xl font-bold text-white">{skill.name}</h4>
-                    <p className="mt-2 text-gray-400">{skill.category}</p>
-                    <p className="mt-2 rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-400">{skill.level}</p>
-                </Card>
-            ))}
-        </div>
+
+            </Card>
+  </motion.div>
+          ))}
+
+        </motion.div>
 
       </Container>
     </section>
   );
 };
 
-export default Skills
+export default Skills;
