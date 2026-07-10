@@ -4,3 +4,26 @@
 body {
   font-family: "Sora", sans-serif;
 }
+body {
+  background: black;
+  color: white;
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
