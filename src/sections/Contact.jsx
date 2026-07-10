@@ -8,8 +8,8 @@ import { contact } from "../constants/contact";
 
 import {
   FaEnvelope,
-  FaPhoneAlt,
   FaMapMarkerAlt,
+  FaPhone,
 } from "react-icons/fa";
 
 const Contact = () => {
@@ -19,7 +19,7 @@ const Contact = () => {
         return <FaEnvelope className="text-2xl text-emerald-400" />;
 
       case "phone":
-        return <FaPhoneAlt className="text-2xl text-emerald-400" />;
+        return <FaPhone className="text-2xl text-emerald-400" />;
 
       case "location":
         return <FaMapMarkerAlt className="text-2xl text-emerald-400" />;
@@ -54,45 +54,47 @@ const Contact = () => {
 
           {/* Left Side */}
 
-          <div className="space-y-6">
-            {contact.map((item) => (
-              <Card
-                key={item.id}
-                className="flex items-center gap-5"
-              >
-                {getIcon(item.title)}
+          <div className="space-y-8">
+  {contact.map((item) => (
+    <div
+      key={item.id}
+      className="flex items-start gap-5 mt-10"
+    >
+      <div className="mt-1">
+        {getIcon(item.title)}
+      </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-white">
-                    {item.title}
-                  </h3>
+      <div>
+        <h3 className="text-xl font-semibold text-white">
+          {item.title}
+        </h3>
 
-                  {item.title === "Location" ? (
-                    <p className="mt-1 text-gray-400">
-                      {item.value}
-                    </p>
-                  ) : (
-                    <a
-                      href={getLink(item)}
-                      target={
-                        item.title === "LinkedIn"
-                          ? "_blank"
-                          : undefined
-                      }
-                      rel={
-                        item.title === "LinkedIn"
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      className="mt-1 block text-gray-400 transition-colors duration-300 hover:text-emerald-400"
-                    >
-                      {item.value}
-                    </a>
-                  )}
-                </div>
-              </Card>
-            ))}
-          </div>
+        {item.title === "Location" ? (
+          <p className="mt-1 text-gray-400">
+            {item.value}
+          </p>
+        ) : (
+          <a
+            href={getLink(item)}
+            target={
+              item.title === "LinkedIn" || item.title === "GitHub"
+                ? "_blank"
+                : undefined
+            }
+            rel={
+              item.title === "LinkedIn" || item.title === "GitHub"
+                ? "noopener noreferrer"
+                : undefined
+            }
+            className="mt-1 block text-gray-400 transition-all duration-300 hover:text-emerald-400"
+          >
+            {item.value}
+          </a>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
 
           {/* Right Side */}
 
